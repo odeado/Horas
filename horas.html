@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Registro Horas Extras</title>
+    <link rel="stylesheet" href="horas.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>⏱️ Horas Extras</h1>
+        <p class="sub">Marco — <span id="periodoLabel">16/mayo → 16/junio</span></p>
+
+        <!-- Horario base -->
+        <div class="card card-muted">
+            <div class="section-title">📋 Horario base (42 hrs/semana)</div>
+            <div class="tabla-base">
+                <span>Lun</span> 9:00→13:30 · 15:00→19:00 <span>8.5</span> ·
+                <span>Mar</span> 9:30→13:30 · 15:00→18:30 <span>7.5</span> ·
+                <span>Mié</span> 9:30→13:30 · 15:00→18:30 <span>7.5</span> ·
+                <span>Jue</span> 9:30→13:30 · 15:00→19:00 <span>8.0</span> ·
+                <span>Vie</span> 9:30→13:30 · 15:00→19:00 <span>8.0</span> ·
+                <span>Sáb</span> 10:00→12:30 <span>2.5</span> ·
+                <span>Dom</span> 0 <span>0.0</span>
+            </div>
+        </div>
+
+        <!-- Selector de período -->
+        <div class="card">
+            <div class="card-title">
+                <span>📅 Período</span>
+                <span class="badge" id="periodoBadge">16 → 16</span>
+            </div>
+            <div class="selector-mes">
+                <select id="selectorMes"></select>
+                <span class="periodo-badge" id="periodoSelectLabel">16/mayo → 16/junio</span>
+            </div>
+            <div class="hint">
+                📌 Selecciona el mes de FINALIZACIÓN (ej: junio = 16/mayo → 16/junio)
+            </div>
+        </div>
+
+        <!-- Formulario de registro -->
+        <div class="card">
+            <div class="card-title">
+                <span>📋 Registrar día</span>
+                <span class="badge" id="diaSemana">—</span>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label>📅 Fecha</label>
+                    <input type="date" id="fecha" />
+                </div>
+                <div id="campoHoraFinal">
+                    <label>⏱️ Hora final</label>
+                    <input type="time" id="horaFinal" value="19:00" />
+                </div>
+            </div>
+
+            <div class="checkbox-feriado">
+                <input type="checkbox" id="esFeriado" />
+                <label for="esFeriado">📅 Marcar como feriado (fondo rojo)</label>
+            </div>
+
+            <!-- Campos especiales por tipo de día -->
+            <div id="sabadoFijo" class="oculto sabado-fijo">
+                <div class="row" style="margin-top:4px;">
+                    <div>
+                        <label>🟦 Entrada (fija)</label>
+                        <input type="time" id="sabadoEntrada" value="10:00" disabled />
+                    </div>
+                    <div>
+                        <label>🟦 Salida (modificable)</label>
+                        <input type="time" id="sabadoSalida" value="12:30" class="campo-manual" />
+                    </div>
+                </div>
+                <div class="hint hint-blue">Sábado: entrada fija 10:00, salida ajustable</div>
+            </div>
+
+            <div id="camposManuales" class="oculto">
+                <div class="row">
+                    <div>
+                        <label class="label-manual">🟡 Hora entrada</label>
+                        <input type="time" id="horaEntradaManual" class="campo-manual" value="09:30" />
+                    </div>
+                    <div>
+                        <label class="label-manual">🟡 Hora salida</label>
+                        <input type="time" id="horaSalidaManual" class="campo-manual" value="15:30" />
+                    </div>
+                </div>
+                <div class="alert alert-yellow">
+                    ⚠️ Domingo: ingresa entrada y salida manual (sin almuerzo)
+                </div>
+            </div>
+
+            <div id="camposFeriado" class="oculto">
+                <div class="section-title" style="color:#b91c1c;">🔴 Horas extras feriado (ENT.3 / SAL.3)</div>
+                <div class="row">
+                    <div>
+                        <label class="label-manual">🟡 ENT.3</label>
+                        <input type="time" id="feriadoEntrada3" class="campo-manual" value="09:30" />
+                    </div>
+                    <div>
+                        <label class="label-manual">🟡 SAL.3</label>
+                        <input type="time" id="feriadoSalida3" class="campo-manual" value="13:30" />
+                    </div>
+                </div>
+                <div class="alert alert-yellow">
+                    ⚠️ Feriado: estas horas se suman como extras
+                </div>
+            </div>
+
+            <div class="checkbox-row" id="rowCorrido">
+                <input type="checkbox" id="corrido" />
+                <label for="corrido">🔁 Jornada corrida (sin almuerzo)</label>
+            </div>
+
+            <div class="horario-actual">
+                <span id="horarioTexto">09:30 → 13:30 · 15:00 → 19:00</span>
+            </div>
+
+            <div class="row mt-1">
+                <div style="flex:2;">
+                    <label>📝 Motivo</label>
+                    <textarea id="motivo" placeholder="Ej: asistiendo usuario problema conexión"></textarea>
+                </div>
+            </div>
+
+            <div class="flex">
+                <button class="btn" id="btnGuardar">✅ Guardar</button>
+                <button class="btn btn-sec" id="btnLimpiarForm">🗑️ Limpiar</button>
+            </div>
+
+            <div class="horario-preview">
+                <span>Total: <span id="prevTotal">8.0</span> hrs</span>
+                <span>Normales: <span id="prevNormales">8.0</span> hrs</span>
+                <span class="extras">Extras: <span id="prevExtras">0.0</span> hrs</span>
+            </div>
+        </div>
+
+        <!-- Tabla de días registrados -->
+        <div class="card">
+            <div class="card-title">
+                <span>📊 Días registrados</span>
+                <span class="badge" id="totalDias">0</span>
+            </div>
+            <div class="hint">
+                Mostrando período: <span id="filtroPeriodoLabel">16/mayo → 16/junio</span>
+            </div>
+            <div class="scroll-h">
+                <table class="tabla-horarios" id="tablaDias">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Sem</th>
+                            <th>Horario</th>
+                            <th>Total</th>
+                            <th>Extra</th>
+                            <th>Motivo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBody">
+                        <tr>
+                            <td colspan="7" class="empty">Sin registros</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="card">
+            <div class="card-title">
+                <span>📊 Resumen</span>
+                <span class="badge" id="resumenPeriodo">16/mayo → 16/junio</span>
+            </div>
+            <div class="totales">
+                <div class="item">
+                    <div class="num" id="sumTotal">0.0</div>
+                    <div class="label">Total hrs</div>
+                </div>
+                <div class="item">
+                    <div class="num" id="sumNormales">0.0</div>
+                    <div class="label">Normales</div>
+                </div>
+                <div class="item">
+                    <div class="num extra" id="sumExtras">0.0</div>
+                    <div class="label">Extras</div>
+                </div>
+            </div>
+            <div class="resumen-semanas" id="resumenSemana">
+                Semana 1: 0.0 · Semana 2: 0.0 · Semana 3: 0.0 · Semana 4: 0.0 · Semana 5: 0.0
+            </div>
+            <div class="total-registros" id="totalRegistrosLabel">Total registros: 0</div>
+        </div>
+
+        <!-- Acciones -->
+        <div class="flex">
+            <button class="btn btn-success" id="btnExportarExcel">📊 Excel</button>
+            <button class="btn btn-danger btn-sm" id="btnBorrarTodo">🗑️ Todo</button>
+        </div>
+        <div class="footer-hint">
+            Los datos se guardan automáticamente en el navegador
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="horas.js"></script>
+</body>
+</html>
