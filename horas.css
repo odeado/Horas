@@ -7,8 +7,9 @@
 }
 
 body {
-    background: #f5f7fa;
-    padding: 20px;
+    background: #0b0d17;
+    color: #e2e8f0;
+    padding: 24px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,7 +23,6 @@ body {
     padding: 0 16px;
 }
 
-/* En móvil: máximo 520px como antes */
 @media (max-width: 768px) {
     body {
         padding: 12px 10px 30px;
@@ -33,27 +33,27 @@ body {
     }
 }
 
-/* ========== TIPOGRAFÍA PROFESIONAL ========== */
+/* ========== TIPOGRAFÍA ========== */
 h1 {
-    font-size: 1.8rem;
-    color: #1a202c;
+    font-size: 1.6rem;
+    color: #f7fafc;
     margin-bottom: 4px;
     font-weight: 700;
 }
 
 .sub {
     color: #718096;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
 }
 
 .section-title {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: #4a5568;
-    margin-bottom: 6px;
+    color: #a0aec0;
+    margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .hint {
@@ -63,60 +63,61 @@ h1 {
 }
 
 .hint-blue {
-    color: #2b6cb0;
+    color: #63b3ed;
     margin-top: 4px;
 }
 
 .footer-hint {
     margin-top: 8px;
     font-size: 0.7rem;
-    color: #a0aec0;
+    color: #4a5568;
     text-align: center;
 }
 
-/* ========== CARDS PROFESIONALES ========== */
+/* ========== CARDS OSCUROS ========== */
 .card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    background: #151725;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #1e2130;
     margin-bottom: 16px;
-    border: 1px solid #e2e8f0;
-    transition: box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #2d3748;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-muted {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+    background: #0f111a;
+    border: 1px solid #1a1d2e;
 }
 
 .card-title {
     font-weight: 600;
-    color: #1a202c;
-    font-size: 1.05rem;
-    margin-bottom: 14px;
+    color: #f7fafc;
+    font-size: 1rem;
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* ========== BADGES SOBRIOS ========== */
+/* ========== BADGES ========== */
 .badge {
-    background: #edf2f7;
-    padding: 3px 12px;
+    background: #1a202c;
+    padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.7rem;
-    color: #4a5568;
+    color: #a0aec0;
     font-weight: 500;
+    border: 1px solid #2d3748;
 }
 
 .badge-semana {
-    background: #ebf8ff;
-    color: #2b6cb0;
+    background: #1a365d;
+    color: #63b3ed;
     padding: 2px 10px;
     border-radius: 20px;
     font-size: 0.65rem;
@@ -124,8 +125,8 @@ h1 {
 }
 
 .badge-domingo {
-    background: #fffaf0;
-    color: #c05621;
+    background: #744210;
+    color: #f6e05e;
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -133,8 +134,8 @@ h1 {
 }
 
 .badge-sabado {
-    background: #ebf8ff;
-    color: #2b6cb0;
+    background: #1a365d;
+    color: #63b3ed;
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -142,8 +143,8 @@ h1 {
 }
 
 .badge-feriado {
-    background: #fff5f5;
-    color: #c53030;
+    background: #742a2a;
+    color: #feb2b2;
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -151,8 +152,8 @@ h1 {
 }
 
 .guardado-ok {
-    background: #f0fff4;
-    color: #276749;
+    background: #22543d;
+    color: #9ae6b4;
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -175,83 +176,85 @@ h1 {
 label {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #4a5568;
+    color: #a0aec0;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 input,
 select,
 textarea {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #cbd5e0;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border: 1px solid #2d3748;
+    border-radius: 10px;
     font-size: 0.95rem;
-    background: white;
+    background: #0f111a;
+    color: #e2e8f0;
     transition: all 0.15s ease;
-    color: #1a202c;
 }
 
 input:hover,
 select:hover,
 textarea:hover {
-    border-color: #a0aec0;
+    border-color: #4a5568;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #4299e1;
+    border-color: #667eea;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
 input[type="date"] {
-    padding: 8px 10px;
+    padding: 8px 12px;
     font-size: 0.9rem;
 }
 
 input[type="time"] {
-    padding: 8px 10px;
+    padding: 8px 12px;
 }
 
 input[type="checkbox"] {
     width: auto;
-    margin-right: 6px;
-    transform: scale(1.1);
+    margin-right: 8px;
+    transform: scale(1.2);
     cursor: pointer;
+    accent-color: #667eea;
 }
 
 textarea {
     resize: vertical;
-    min-height: 40px;
+    min-height: 44px;
     font-size: 0.85rem;
 }
 
 /* Campos manuales */
 .campo-manual {
-    background: #fffff0;
-    border-color: #d69e2e;
+    background: #1a1708;
+    border-color: #b7791f;
+    color: #faf089;
 }
 
 .campo-manual:focus {
-    border-color: #b7791f;
+    border-color: #d69e2e;
     box-shadow: 0 0 0 3px rgba(214, 158, 46, 0.15);
 }
 
 .label-manual {
-    color: #744210;
+    color: #d69e2e;
     font-weight: 600;
 }
 
-/* ========== BOTONES PROFESIONALES ========== */
+/* ========== BOTONES ========== */
 .btn {
-    background: #3182ce;
+    background: #667eea;
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding: 12px 24px;
     font-weight: 600;
     font-size: 0.9rem;
     width: 100%;
@@ -260,28 +263,30 @@ textarea {
 }
 
 .btn:hover {
-    background: #2b6cb0;
+    background: #5a67d8;
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.25);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 1px 4px rgba(49, 130, 206, 0.2);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
 }
 
 .btn-sec {
-    background: #edf2f7;
-    color: #4a5568;
+    background: #1a202c;
+    color: #a0aec0;
+    border: 1px solid #2d3748;
 }
 
 .btn-sec:hover {
-    background: #e2e8f0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #2d3748;
+    color: #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .btn-sec:active {
-    background: #cbd5e0;
+    background: #4a5568;
 }
 
 .btn-success {
@@ -290,7 +295,7 @@ textarea {
 
 .btn-success:hover {
     background: #2f855a;
-    box-shadow: 0 2px 8px rgba(56, 161, 105, 0.25);
+    box-shadow: 0 4px 16px rgba(56, 161, 105, 0.35);
 }
 
 .btn-success:active {
@@ -303,7 +308,7 @@ textarea {
 
 .btn-danger:hover {
     background: #c53030;
-    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.25);
+    box-shadow: 0 4px 16px rgba(229, 62, 62, 0.35);
 }
 
 .btn-danger:active {
@@ -324,24 +329,24 @@ textarea {
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    background: #fed7d7;
-    color: #c53030;
+    background: #742a2a;
+    color: #feb2b2;
     transition: all 0.15s ease;
     font-weight: 500;
 }
 
 .btn-xs:hover {
-    background: #feb2b2;
+    background: #9b2c2c;
 }
 
 .btn-xs:active {
-    background: #fc8181;
+    background: #c53030;
 }
 
 /* ========== LAYOUT ========== */
 .flex {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -357,23 +362,24 @@ textarea {
 
 /* ========== TABLA BASE ========== */
 .tabla-base {
-    font-size: 0.75rem;
-    color: #4a5568;
-    background: #f7fafc;
-    padding: 10px 14px;
-    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #a0aec0;
+    background: #0f111a;
+    padding: 12px 16px;
+    border-radius: 10px;
     margin-bottom: 8px;
     line-height: 1.6;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #1e2130;
 }
 
 .tabla-base span {
     display: inline-block;
-    background: #e2e8f0;
-    padding: 1px 8px;
-    border-radius: 4px;
-    margin: 0 3px;
+    background: #1a202c;
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin: 0 4px;
     font-weight: 500;
+    color: #e2e8f0;
 }
 
 /* ========== SELECTOR DE MES ========== */
@@ -386,29 +392,31 @@ textarea {
 
 .selector-mes select {
     flex: 2;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #2d3748;
     font-size: 0.95rem;
-    background: white;
+    background: #0f111a;
+    color: #e2e8f0;
     cursor: pointer;
 }
 
 .periodo-badge {
-    background: #edf2f7;
+    background: #1a202c;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #4a5568;
+    color: #a0aec0;
+    border: 1px solid #2d3748;
 }
 
 /* ========== CHECKBOXES ========== */
 .checkbox-row {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 4px 0;
+    gap: 8px;
+    padding: 6px 0;
 }
 
 .checkbox-row label {
@@ -416,14 +424,14 @@ textarea {
     font-size: 0.85rem;
     font-weight: 400;
     cursor: pointer;
-    color: #4a5568;
+    color: #a0aec0;
 }
 
 .checkbox-feriado {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 0;
+    gap: 10px;
+    padding: 8px 0;
 }
 
 .checkbox-feriado label {
@@ -431,43 +439,44 @@ textarea {
     font-size: 0.85rem;
     font-weight: 400;
     cursor: pointer;
-    color: #4a5568;
+    color: #a0aec0;
 }
 
 .checkbox-feriado input[type="checkbox"] {
     width: auto;
-    transform: scale(1.1);
+    transform: scale(1.2);
+    accent-color: #667eea;
 }
 
 /* ========== ALERTAS ========== */
 .alert {
     font-size: 0.8rem;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
     margin-bottom: 8px;
 }
 
 .alert-yellow {
-    color: #744210;
-    background: #fffff0;
+    color: #faf089;
+    background: #1a1708;
     border-left: 3px solid #d69e2e;
 }
 
 /* ========== HORARIO ACTUAL ========== */
 .horario-actual {
     font-size: 0.85rem;
-    color: #4a5568;
-    background: #f7fafc;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border-left: 3px solid #3182ce;
+    color: #a0aec0;
+    background: #0f111a;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-left: 3px solid #667eea;
 }
 
 .horario-preview {
-    background: #f7fafc;
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin-top: 12px;
+    background: #0f111a;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 14px;
     font-size: 0.9rem;
     display: flex;
     flex-wrap: wrap;
@@ -477,15 +486,15 @@ textarea {
 }
 
 .horario-preview .extras {
-    color: #c05621;
+    color: #f6ad55;
     font-weight: 600;
 }
 
 /* ========== TABLA DE HORARIOS ========== */
 .scroll-h {
     overflow-x: auto;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    border: 1px solid #1e2130;
 }
 
 .tabla-horarios {
@@ -495,44 +504,44 @@ textarea {
 }
 
 .tabla-horarios th {
-    background: #f7fafc;
-    padding: 8px 6px;
+    background: #0f111a;
+    padding: 10px 8px;
     text-align: center;
     font-weight: 600;
-    color: #4a5568;
-    border-bottom: 2px solid #cbd5e0;
+    color: #a0aec0;
+    border-bottom: 2px solid #2d3748;
     font-size: 0.7rem;
     white-space: nowrap;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
 }
 
 .tabla-horarios td {
-    padding: 8px 6px;
+    padding: 10px 8px;
     text-align: center;
-    border-bottom: 1px solid #edf2f7;
+    border-bottom: 1px solid #1e2130;
     vertical-align: middle;
     font-size: 0.8rem;
-    color: #2d3748;
+    color: #e2e8f0;
 }
 
 .tabla-horarios tr:hover td {
-    background: #f7fafc;
+    background: #1a1d2e;
 }
 
 .tabla-horarios .extra {
-    color: #c05621;
+    color: #f6ad55;
     font-weight: 600;
 }
 
-.tabla-horarios .domingo { background: #fffaf0; }
-.tabla-horarios .feriado { background: #fff5f5; }
-.tabla-horarios .sabado { background: #f0f9ff; }
+.tabla-horarios .domingo { background: #1a1708; }
+.tabla-horarios .feriado { background: #1a0808; }
+.tabla-horarios .sabado { background: #0a1628; }
 
 .horario-cell {
     font-size: 0.75rem;
     font-weight: 500;
-    color: #1a202c;
+    color: #f7fafc;
     white-space: nowrap;
 }
 
@@ -546,8 +555,8 @@ textarea {
 }
 
 .corrido-badge {
-    background: #e0f2fe;
-    color: #0369a1;
+    background: #1a365d;
+    color: #63b3ed;
     font-size: 0.6rem;
     padding: 2px 8px;
     border-radius: 20px;
@@ -556,9 +565,9 @@ textarea {
 }
 
 .empty {
-    color: #a0aec0;
+    color: #4a5568;
     text-align: center;
-    padding: 20px 0;
+    padding: 24px 0;
     font-size: 0.9rem;
 }
 
@@ -570,27 +579,27 @@ textarea {
 }
 
 .totales .item {
-    background: #f7fafc;
-    border-radius: 10px;
-    padding: 16px 8px;
+    background: #0f111a;
+    border-radius: 12px;
+    padding: 18px 10px;
     text-align: center;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #1e2130;
     transition: all 0.2s ease;
 }
 
 .totales .item:hover {
-    background: #edf2f7;
-    border-color: #cbd5e0;
+    background: #1a1d2e;
+    border-color: #2d3748;
 }
 
 .totales .item .num {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #1a202c;
+    color: #f7fafc;
 }
 
 .totales .item .num.extra {
-    color: #c05621;
+    color: #f6ad55;
 }
 
 .totales .item .label {
@@ -598,11 +607,11 @@ textarea {
     color: #718096;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .resumen-semanas {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 0.75rem;
     color: #718096;
     text-align: center;
@@ -611,21 +620,21 @@ textarea {
 .total-registros {
     font-size: 0.75rem;
     color: #718096;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 /* ========== SÁBADO FIJO ========== */
 .sabado-fijo {
-    background: #ebf8ff;
-    padding: 10px 14px;
-    border-radius: 8px;
+    background: #0a1628;
+    padding: 12px 16px;
+    border-radius: 10px;
     font-size: 0.8rem;
-    color: #2b6cb0;
+    color: #63b3ed;
     text-align: center;
-    border-left: 3px solid #3182ce;
+    border-left: 3px solid #667eea;
 }
 
-/* ========== TOAST PROFESIONALES ========== */
+/* ========== TOAST OSCUROS ========== */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -650,20 +659,21 @@ textarea {
 }
 
 .toast {
-    background: #1a202c;
-    color: white;
+    background: #151725;
+    color: #e2e8f0;
     padding: 14px 18px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 0.9rem;
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     transform: translateX(120%);
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: auto;
     min-width: 320px;
+    border: 1px solid #1e2130;
     border-left: 4px solid transparent;
 }
 
@@ -702,8 +712,8 @@ textarea {
 .toast-close {
     background: none;
     border: none;
-    color: white;
-    opacity: 0.5;
+    color: #a0aec0;
+    opacity: 0.6;
     cursor: pointer;
     font-size: 1.1rem;
     padding: 0;
@@ -724,43 +734,47 @@ textarea {
 
 /* Tipos de toast */
 .toast-success {
-    background: #f0fff4;
-    color: #22543d;
+    background: #0f1f15;
+    color: #9ae6b4;
     border-left-color: #38a169;
+    border-color: #22543d;
 }
 
 .toast-success .toast-close {
-    color: #22543d;
+    color: #9ae6b4;
 }
 
 .toast-error {
-    background: #fff5f5;
-    color: #742a2a;
+    background: #1f0f0f;
+    color: #feb2b2;
     border-left-color: #e53e3e;
+    border-color: #742a2a;
 }
 
 .toast-error .toast-close {
-    color: #742a2a;
+    color: #feb2b2;
 }
 
 .toast-warning {
-    background: #fffbeb;
-    color: #744210;
+    background: #1f1a0f;
+    color: #faf089;
     border-left-color: #d69e2e;
+    border-color: #744210;
 }
 
 .toast-warning .toast-close {
-    color: #744210;
+    color: #faf089;
 }
 
 .toast-info {
-    background: #ebf8ff;
-    color: #2a4365;
-    border-left-color: #3182ce;
+    background: #0f1525;
+    color: #a3bffa;
+    border-left-color: #667eea;
+    border-color: #1a365d;
 }
 
 .toast-info .toast-close {
-    color: #2a4365;
+    color: #a3bffa;
 }
 
 /* Barra de progreso del toast */
@@ -769,12 +783,12 @@ textarea {
     bottom: 0;
     left: 0;
     height: 3px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 0 12px;
     transition: width linear;
 }
 
-/* ========== ANIMACIONES SUAVES ========== */
+/* ========== ANIMACIONES ========== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
@@ -798,28 +812,28 @@ textarea {
 
 .sep {
     height: 1px;
-    background: #e2e8f0;
-    margin: 14px 0;
+    background: #1e2130;
+    margin: 16px 0;
 }
 
-/* Scrollbar personalizada */
+/* Scrollbar personalizada oscura */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f7fafc;
+    background: #0b0d17;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e0;
+    background: #2d3748;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a0aec0;
+    background: #4a5568;
 }
 
 /* Grid de dos columnas en PC para formulario */
