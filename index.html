@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Registro Horas Extras</title>
     <link rel="stylesheet" href="horas.css" />
+<base target="_blank">
 </head>
 <body>
     <div class="container">
@@ -47,89 +48,91 @@
                 <span class="badge" id="diaSemana">—</span>
             </div>
 
-            <div class="row">
-                <div>
-                    <label>📅 Fecha</label>
-                    <input type="date" id="fecha" />
-                </div>
-                <div id="campoHoraFinal">
-                    <label>⏱️ Hora final</label>
-                    <input type="time" id="horaFinal" value="19:00" />
-                </div>
-            </div>
-
-            <div class="checkbox-feriado">
-                <input type="checkbox" id="esFeriado" />
-                <label for="esFeriado">📅 Marcar como feriado (fondo rojo)</label>
-            </div>
-
-            <!-- Campos especiales por tipo de día -->
-            <div id="sabadoFijo" class="oculto sabado-fijo">
-                <div class="row" style="margin-top:4px;">
-                    <div>
-                        <label>🟦 Entrada (fija)</label>
-                        <input type="time" id="sabadoEntrada" value="10:00" disabled />
-                    </div>
-                    <div>
-                        <label>🟦 Salida (modificable)</label>
-                        <input type="time" id="sabadoSalida" value="12:30" class="campo-manual" />
-                    </div>
-                </div>
-                <div class="hint hint-blue">Sábado: entrada fija 10:00, salida ajustable</div>
-            </div>
-
-            <div id="camposManuales" class="oculto">
+            <div class="form-grid">
                 <div class="row">
                     <div>
-                        <label class="label-manual">🟡 Hora entrada</label>
-                        <input type="time" id="horaEntradaManual" class="campo-manual" value="09:30" />
+                        <label>📅 Fecha</label>
+                        <input type="date" id="fecha" />
                     </div>
-                    <div>
-                        <label class="label-manual">🟡 Hora salida</label>
-                        <input type="time" id="horaSalidaManual" class="campo-manual" value="15:30" />
-                    </div>
-                </div>
-                <div class="alert alert-yellow">
-                    ⚠️ Domingo: ingresa entrada y salida manual (sin almuerzo)
-                </div>
-            </div>
-
-            <div id="camposFeriado" class="oculto">
-                <div class="section-title" style="color:#b91c1c;">🔴 Horas extras feriado (ENT.3 / SAL.3)</div>
-                <div class="row">
-                    <div>
-                        <label class="label-manual">🟡 ENT.3</label>
-                        <input type="time" id="feriadoEntrada3" class="campo-manual" value="09:30" />
-                    </div>
-                    <div>
-                        <label class="label-manual">🟡 SAL.3</label>
-                        <input type="time" id="feriadoSalida3" class="campo-manual" value="13:30" />
+                    <div id="campoHoraFinal">
+                        <label>⏱️ Hora final</label>
+                        <input type="time" id="horaFinal" value="19:00" />
                     </div>
                 </div>
-                <div class="alert alert-yellow">
-                    ⚠️ Feriado: estas horas se suman como extras
+
+                <div class="checkbox-feriado form-grid-full">
+                    <input type="checkbox" id="esFeriado" />
+                    <label for="esFeriado">📅 Marcar como feriado (fondo rojo)</label>
                 </div>
-            </div>
 
-            <div class="checkbox-row" id="rowCorrido">
-                <input type="checkbox" id="corrido" />
-                <label for="corrido">🔁 Jornada corrida (sin almuerzo)</label>
-            </div>
-
-            <div class="horario-actual">
-                <span id="horarioTexto">09:30 → 13:30 · 15:00 → 19:00</span>
-            </div>
-
-            <div class="row mt-1">
-                <div style="flex:2;">
-                    <label>📝 Motivo</label>
-                    <textarea id="motivo" placeholder="Ej: asistiendo usuario problema conexión"></textarea>
+                <!-- Campos especiales por tipo de día -->
+                <div id="sabadoFijo" class="oculto sabado-fijo form-grid-full">
+                    <div class="row" style="margin-top:4px;">
+                        <div>
+                            <label>🟦 Entrada (fija)</label>
+                            <input type="time" id="sabadoEntrada" value="10:00" disabled />
+                        </div>
+                        <div>
+                            <label>🟦 Salida (modificable)</label>
+                            <input type="time" id="sabadoSalida" value="12:30" class="campo-manual" />
+                        </div>
+                    </div>
+                    <div class="hint hint-blue">Sábado: entrada fija 10:00, salida ajustable</div>
                 </div>
-            </div>
 
-            <div class="flex">
-                <button class="btn" id="btnGuardar">✅ Guardar</button>
-                <button class="btn btn-sec" id="btnLimpiarForm">🗑️ Limpiar</button>
+                <div id="camposManuales" class="oculto form-grid-full">
+                    <div class="row">
+                        <div>
+                            <label class="label-manual">🟡 Hora entrada</label>
+                            <input type="time" id="horaEntradaManual" class="campo-manual" value="09:30" />
+                        </div>
+                        <div>
+                            <label class="label-manual">🟡 Hora salida</label>
+                            <input type="time" id="horaSalidaManual" class="campo-manual" value="15:30" />
+                        </div>
+                    </div>
+                    <div class="alert alert-yellow">
+                        ⚠️ Domingo: ingresa entrada y salida manual (sin almuerzo)
+                    </div>
+                </div>
+
+                <div id="camposFeriado" class="oculto form-grid-full">
+                    <div class="section-title" style="color:#c53030;">🔴 Horas extras feriado (ENT.3 / SAL.3)</div>
+                    <div class="row">
+                        <div>
+                            <label class="label-manual">🟡 ENT.3</label>
+                            <input type="time" id="feriadoEntrada3" class="campo-manual" value="09:30" />
+                        </div>
+                        <div>
+                            <label class="label-manual">🟡 SAL.3</label>
+                            <input type="time" id="feriadoSalida3" class="campo-manual" value="13:30" />
+                        </div>
+                    </div>
+                    <div class="alert alert-yellow">
+                        ⚠️ Feriado: estas horas se suman como extras
+                    </div>
+                </div>
+
+                <div class="checkbox-row form-grid-full" id="rowCorrido">
+                    <input type="checkbox" id="corrido" />
+                    <label for="corrido">🔁 Jornada corrida (sin almuerzo)</label>
+                </div>
+
+                <div class="horario-actual form-grid-full">
+                    <span id="horarioTexto">09:30 → 13:30 · 15:00 → 19:00</span>
+                </div>
+
+                <div class="row form-grid-full">
+                    <div style="flex:2;">
+                        <label>📝 Motivo</label>
+                        <textarea id="motivo" placeholder="Ej: asistiendo usuario problema conexión"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex form-grid-full">
+                    <button class="btn" id="btnGuardar">✅ Guardar</button>
+                    <button class="btn btn-sec" id="btnLimpiarForm">🗑️ Limpiar</button>
+                </div>
             </div>
 
             <div class="horario-preview">
@@ -205,8 +208,6 @@
             Los datos se guardan automáticamente en el navegador
         </div>
     </div>
-
-    <div id="toast" class="toast"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="horas.js"></script>
